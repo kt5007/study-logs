@@ -1,20 +1,42 @@
 <script>
-    let obj = {
-        prop: true,
-        subObj: {
-            val: 100
-        },
-        greeting: function() {console.log("こんにちは")}
-    };
-    console.log(obj.prop);
-    console.log(obj['prop']);
+    // 3.7
+    // console.log(Boolean(0));
+    // console.log(Boolean(""));
+    // console.log(Boolean(null));
+    // console.log(Boolean(undefined));
 
-    console.log(obj.subObj.val);
-    console.log(obj['subObj']['val']);
+    // 3.8
+    // [1]
+    // 1. アドレス
+    // 2. let
+    // 3. const
+    // 4. var
+    
+    // [2]
+    // 商品の金額は1000円ですので、税込金額は1100円です。
+    // const TAX_RATE = 1.1;
+    // let productPrice = 1000;
+    // let tax_price = TAX_RATE * productPrice;
+    // console.log('商品の金額は' + productPrice + '円ですので、税込金額は' + tax_price + '円です。');
+    // console.log(`商品の金額は${productPrice}円ですので、税込金額は${tax_price}円です。`);
 
-    obj["greeting"]();
-    obj.greeting();
+    // [3]
+    // console.log((12**2) % 5);
+    // console.log(BigInt(12**2) % 5n );
+    // console.log( 12n ** 2n % 5n );
+    // 文字列を数字に変更しようとしたとき
 
-    obj['subObj']['val2'] = 1000;
-    console.log(obj['subObj']);
+    // [4]
+    // 1.値が存在しない
+    // 2.値が未定義
+
+    // [5]
+    // const counter = { num: 1 };
+    // window.alert(counter.num);
+
+    // [6]
+    // 1.object
+    // 2.101
+    // 3.NaN
+    // 4.2
 </script>
