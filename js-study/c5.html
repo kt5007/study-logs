@@ -1,8 +1,96 @@
 <script>
-    const person = { name: "Bob", age: 28, gender: "male" };
-    if (person.gender === "male" && person.age >= 25) {
-        console.log("Bobは25歳以上の男性です。");
-    } else {
-        console.log("Bobは25歳以上の男性ではありません。");
-    }
+  // const person = { name: "Bob", age: 28, gender: "male" };
+  // if (person.gender === "male" && person.age >= 25) {
+  //     console.log("Bobは25歳以上の男性です。");
+  // } else {
+  //     console.log("Bobは25歳以上の男性ではありません。");
+  // }
+
+  // let val = "";
+  // if (!val){
+  //     val = "Hello";
+  // }
+
+  // let val = null;
+  // if ( val === null || val === undefined ){
+  //     val = "Hello";
+  // }
+
+  // let animal = "ウサギ";
+  // switch (animal){
+  //     case "ゾウ":
+  //         console.log("ゾウ");
+
+  //     case "ウマ":
+  //         console.log("ウマ");
+
+  //     case "ウサギ":
+  //         console.log("ウサギ");
+  //         break;
+
+  //     default:
+  //         console.log("何が渡されたかわかりません");
+  // }
+
+  // try {
+  //     let b = 10 + a;
+  //     console.log( b );
+  // } catch (error) {
+  //     console.error(error.name);
+  // } finally {
+  //     console.log( "後続の処理" );
+  // }
+
+  // try {
+  //     let greeting = 1;
+  //     if (typeof greeting === "string") {
+  //         console.log(`${greeting}、いい天気ですね`);
+  //     } else {
+  //         throw new Error("不正なデータ型です。");
+  //     }
+  // } catch (error) {
+  //     console.log(error.message);
+  // }
+
+  // let i = 0;
+  // while (i<=6) {
+  //     console.log(i);
+  //     i += 2;
+  // }
+
+  // for (let i = 0; i <= 9; i+=3) {
+  //     console.log(i);
+  // }
+
+  // const array = [ 10, 20, 23, 47 ];
+  // let array_sum = 0;
+  // for (let i = 0; i < array.length; i++) {
+  //     array_sum  += array[i];
+  // }
+  // console.log(array_sum);
+
+//   const obj = { prop1: 10, prop2: 20, skip: 20, prop3: 23, prop4: 47 };
+//   let obj_sum = 0;
+//   for (const key in obj) {
+//     if (key === "skip") {
+//       continue;
+//     }
+//     obj_sum += obj[key];
+//   }
+//   console.log(obj_sum);
+
+// const obj = {prop: "値"};
+// const propDesc = Reflect.getOwnPropertyDescriptor(obj,"prop");
+// console.log(propDesc);
+
+// 配列を定義
+// const arry = [ "リンゴ", "バナナ" ];
+// 配列のキーをループで取得 for( const key in arry ) {
+// const value = Reflect.getOwnPropertyDescriptor(arry,"length");
+// console.log(value);
+
+// 5.11
+const arry = [ 10, "文字列", 20, true, 23, 47 ];
+
+
 </script>
