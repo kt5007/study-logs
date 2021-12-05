@@ -99,22 +99,32 @@
   // console.log(sum);
 
   // 5.12
-  const obj = {
-    prop1: 10,
-    prop2: "文字列",
-    prop3: 20,
-    skip: 20,
-    prop4: true,
-    prop5: 23,
-    prop6: 47,
-  };
-  let sum = 0;
-  for (const entry of Object.entries(obj)) {
-    const key = entry[0];
-    const value = entry[1];
-    if ( typeof value === "number" && key !== "skip") {
-      sum += value;
-    }
+  // const obj = {
+  //   prop1: 10,
+  //   prop2: "文字列",
+  //   prop3: 20,
+  //   skip: 20,
+  //   prop4: true,
+  //   prop5: 23,
+  //   prop6: 47,
+  // };
+  // let sum = 0;
+  // for (const entry of Object.entries(obj)) {
+  //   const key = entry[0];
+  //   const value = entry[1];
+  //   if ( typeof value === "number" && key !== "skip") {
+  //     sum += value;
+  //   }
+  // }
+  // console.log(sum);
+  // 5.13
+  const breakTestArry = ["ぬけない", "not break", "break", "この前で抜ける"];
+  i=0;
+  while(i<100){
+    console.log(breakTestArry[i]);
+    if (breakTestArry[i] === "break") {
+      break;
+    } 
+    i++;
   }
-  console.log(sum);
 </script>
