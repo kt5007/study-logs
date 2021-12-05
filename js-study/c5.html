@@ -90,7 +90,11 @@
 // console.log(value);
 
 // 5.11
+let sum = 0 ;
 const arry = [ 10, "文字列", 20, true, 23, 47 ];
-
+for (const value of arry) {
+  sum += typeof value === 'number' ? value : 0;
+}
+console.log(sum);
 
 </script>
