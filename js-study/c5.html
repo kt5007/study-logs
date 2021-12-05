@@ -69,32 +69,52 @@
   // }
   // console.log(array_sum);
 
-//   const obj = { prop1: 10, prop2: 20, skip: 20, prop3: 23, prop4: 47 };
-//   let obj_sum = 0;
-//   for (const key in obj) {
-//     if (key === "skip") {
-//       continue;
-//     }
-//     obj_sum += obj[key];
-//   }
-//   console.log(obj_sum);
+  //   const obj = { prop1: 10, prop2: 20, skip: 20, prop3: 23, prop4: 47 };
+  //   let obj_sum = 0;
+  //   for (const key in obj) {
+  //     if (key === "skip") {
+  //       continue;
+  //     }
+  //     obj_sum += obj[key];
+  //   }
+  //   console.log(obj_sum);
 
-// const obj = {prop: "値"};
-// const propDesc = Reflect.getOwnPropertyDescriptor(obj,"prop");
-// console.log(propDesc);
+  // const obj = {prop: "値"};
+  // const propDesc = Reflect.getOwnPropertyDescriptor(obj,"prop");
+  // console.log(propDesc);
 
-// 配列を定義
-// const arry = [ "リンゴ", "バナナ" ];
-// 配列のキーをループで取得 for( const key in arry ) {
-// const value = Reflect.getOwnPropertyDescriptor(arry,"length");
-// console.log(value);
+  // 配列を定義
+  // const arry = [ "リンゴ", "バナナ" ];
+  // 配列のキーをループで取得 for( const key in arry ) {
+  // const value = Reflect.getOwnPropertyDescriptor(arry,"length");
+  // console.log(value);
 
-// 5.11
-let sum = 0 ;
-const arry = [ 10, "文字列", 20, true, 23, 47 ];
-for (const value of arry) {
-  sum += typeof value === 'number' ? value : 0;
-}
-console.log(sum);
+  // 5.11
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+  // let sum = 0;
+  // const arry = [10, "文字列", 20, true, 23, 47];
+  // for (const value of arry) {
+  //   sum += typeof value === "number" ? value : 0;
+  // }
+  // console.log(sum);
 
+  // 5.12
+  const obj = {
+    prop1: 10,
+    prop2: "文字列",
+    prop3: 20,
+    skip: 20,
+    prop4: true,
+    prop5: 23,
+    prop6: 47,
+  };
+  let sum = 0;
+  for (const entry of Object.entries(obj)) {
+    const key = entry[0];
+    const value = entry[1];
+    if ( typeof value === "number" && key !== "skip") {
+      sum += value;
+    }
+  }
+  console.log(sum);
 </script>
