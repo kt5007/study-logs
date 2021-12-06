@@ -125,15 +125,44 @@
   //   console.log(breakTestArry[i]);
   //   if (breakTestArry[i] === "break") {
   //     break;
-  //   } 
+  //   }
   //   i++;
   // }
 
   // 5.14
-  for (let i = 1; i <= 4; i++) {
-    if (i===3) {
-      continue;
-    }
-    console.log(`${i}回目のループです。`)
+  // for (let i = 1; i <= 4; i++) {
+  //   if (i===3) {
+  //     continue;
+  //   }
+  //   console.log(`${i}回目のループです。`)
+  // }
+
+  // [1]
+  // let i = 5;
+  // for (let i = 5; i < 10; i++) {
+  //   console.log(i);
+  // }
+
+  // [2]
+  // for (let i = 1; i <= 100; i++) {
+  //   if (i % 3 === 0 && i % 5 === 0) {
+  //     console.log("fizz buzz");
+  //   } else if (i % 3 === 0) {
+  //     console.log("fizz");
+  //   } else if (i % 5 === 0) {
+  //     console.log("buzz");
+  //   } else {
+  //     console.log(i);
+  //   }
+  // }
+
+  // [3]
+  // 1.列挙可能プロパティ
+  // 2.プロパティ記述子
+  // 3.enumerable
+
+  // [4]
+  for (const capital of Object.entries(capitals)) {
+    console.log(`${capital[0]}の首都は${capital[1]}です。`)
   }
 </script>
