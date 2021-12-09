@@ -109,5 +109,48 @@
   //   console.log(double(10));
   //   setTimeout(name => console.log('こんにちは'+name), 3000, '独習太郎');
 
-  
+  // [1]
+  // 1.仮引数 2.実引数 3.undefined 4.NaN→こんにちは、undefined
+  // [2]
+  // 1.undefined
+  // 2.20
+  // 3.undefined
+  // [3]
+  // 1.実引数→undefined
+  // 2.undefined
+  // 3.10
+  // 4."100"
+  // [4]
+//   setTimeout(
+//     function (name) {
+//       console.log("こんにちは" + name);
+//     },
+//     2000,
+//     "kento"
+//   );
+
+//   setTimeout((name) => console.log("こんにちは" + name), 2000, "takanashi");
+
+//   function add(val1, val2) {
+//     return val1 + val2;
+//   }
+
+//   function minus(val1, val2) {
+//     return val1 - val2;
+//   }
+//   const calcAndDisp = function (callback1, callback2, val1, val2) {
+//       const result = callback1(val1,val2);
+//       callback2(result);
+//   }
+//   calcAndDisp( add, console.log, 3, 2 );
+//   calcAndDisp( minus, alert, 3, 2 );
+// [5]
+// (num1, num2) => num1 + num2;
+// num => num * 2;
+// () => console.log('hello world');
+// name => {
+//     console.log( "Hello World" ); console.log( `Hello ${name}!` );
+// }
+// () => { name: "独習太郎" };
+
 </script>
