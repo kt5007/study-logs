@@ -1,24 +1,72 @@
 <script>
   // 7.2
   /*
-    1.グローバル 2.スクリプト 3.スクリプト 
-    4.関数 5.関数 6.関数 7.関数 8.関数 9.スクリプト
-    */
+      1.グローバル 2.スクリプト 3.スクリプト
+      4.関数 5.関数 6.関数 7.関数 8.関数 9.スクリプト
+      */
   //7.3
   // レキシカルスコープとは記述する場所によって参照できる変数が異なるスコープのことを指します。
   // ブロックスコープになっており参照できない状態
   /*
-  let rand;
-  function chance() {
-    let result;
-    rand = Math.random();
-    if (rand < 0.5) {
-      result = "成功";
-    } else {
-      result = "失敗";
+    let rand;
+    function chance() {
+      let result;
+      rand = Math.random();
+      if (rand < 0.5) {
+        result = "成功";
+      } else {
+        result = "失敗";
+      }
+      return result;
     }
-    return result;
+    console.log(chance());
+    */
+
+  //  [1]
+  // 1.スクリプト
+  // 2.グローバル
+  // 3.関数
+  // 4.ブロック
+  // 5.モジュール
+  // 6.外側
+
+  // [2]
+  // 1.関数内
+  // 2.関数内
+  // 3.エラー→関数内
+  // 4.関数内
+  // 5.エラー→グローバル
+  // 6.グローバル
+  // 7.console.log('関数内')
+
+  //   [3];
+  //自分の解答
+  /*
+  const dialog = delayMessageFactory(alert, 2000);
+  dialog("こんにちは");
+  function delayMessageFactory(callback, time) {
+    let greeting;
+    return function (greeting) {
+      setTimeout(callback(greeting), time);
+    };
   }
-  console.log(chance());
   */
+
+  //正解の一つ
+  /*
+  const dialog = delayMessageFactory(alert, 2000);
+  dialog("こんにちは");
+  function delayMessageFactory(printFn, ms) {
+	  return function (greeting) {
+		  setTimeout(function () {
+			  printFn(greeting);
+			}, ms);
+		};
+	}
+	*/
+
+//   const delayMessageFactory = (printFn, ms) => 
+//     (greeting) => setTimeout(() => printFn(greeting), ms);
+//   const dialog = delayMessageFactory(alert, 2000);
+//   dialog("こんにちは");
 </script>
