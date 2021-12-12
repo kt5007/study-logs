@@ -43,7 +43,7 @@
   std.print();
 */
 
-/*
+  /*
 class Person {
   constructor(firstname, lastname) {
     this.firstname = firstname;
@@ -80,7 +80,7 @@ taro.gender = "トランス";
 //   console.log(taro);
 */
 
-/*
+  /*
 9.4
 class Parent {
     constructor (name){
@@ -98,12 +98,38 @@ const taro = new Child("独習");
 taro.introduction();
 */
 
-// 9.5
-/*
+  // 9.5
+  /*
 1.true
 2.false
 3.true
 4.true
 */
 
+  // 9.6
+  /*
+  class Person {
+    #lastname = "独習";
+    #firstname;
+    #age;
+    constructor(firstname) {
+      this.#firstname = firstname;
+    }
+
+    get fullname() {
+      return this.#lastname + this.#firstname;
+    }
+
+    set age(value) {
+      this.#age = Number(value);
+    }
+    get age() {
+      return this.#age;
+    }
+  }
+  const taro = new Person("太郎");
+  taro.age = 18;
+  console.log(taro.age);
+  console.log(taro.fullname);
+  */
 </script>
