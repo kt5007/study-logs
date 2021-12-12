@@ -1,0 +1,101 @@
+<script>
+  /*
+  class User {
+    constructor(username, password, roll) {
+      this.username = username;
+      this.password = password;
+      this.roll = roll;
+    }
+    login() {
+      this.check();
+      console.log(`ログイン[${this.username} / ${this.password}]`);
+    }
+    check() {
+      console.log(`ログイン情報をチェックします。`);
+    }
+    checkRoll() {
+      const display =
+        this.roll === "admin" ? "管理者権限です" : "一般ユーザーです";
+      console.log(display);
+    }
+  }
+  const taro = new User("独習 太郎", "taro-pwd", "test");
+  taro.login();
+  taro.checkRoll();
+  */
+
+  //   9.2
+  /*
+  class StdClass {
+    constructor(arg) {
+      this.arg = arg;
+    }
+    static printFn = console.log;
+    static print(arg) {
+      StdClass.printFn(arg);
+    }
+
+    print() {
+      this.constructor.print(this.arg);
+    }
+  }
+  const std = new StdClass("こんにちは");
+  std.print();
+*/
+
+/*
+class Person {
+  constructor(firstname, lastname) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+  }
+  get fullname() {
+    return this.lastname + this.firstname;
+  }
+  set age(value) {
+    this._age = Number(value);
+  }
+  get age() {
+    return this._age;
+  }
+  set gender(gender){
+      const arr = ["男", "女", "トランスジェンダー"];
+      try {
+          if(arr.indexOf(gender) !== -1){
+              this._gender = gender;
+          } else{
+              throw 'gender プロパティには " 男 "、" 女 "、または " トランスジェンダー " を設定してください。';
+          }
+      } catch (e) {
+          console.error(e);
+      }
+  }
+  get gender(){
+      return this._gender;
+  }
+}
+const taro = new Person("太郎", "独習");
+taro.gender = "トランス";
+//   console.log(typeof taro.gender);
+//   console.log(taro);
+*/
+
+/*
+9.4
+class Parent {
+    constructor (name){
+        this.familyName = name;
+    }
+    introduction(){
+        console.log(`名字は${this.familyName}です。`);
+    }
+}
+
+class Child extends Parent{
+}
+
+const taro = new Child("独習");
+taro.introduction();
+*/
+
+</script>
