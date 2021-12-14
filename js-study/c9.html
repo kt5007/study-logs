@@ -132,4 +132,53 @@ taro.introduction();
   console.log(taro.age);
   console.log(taro.fullname);
   */
+
+  //   2
+  /*
+  function Person(name) {
+    this.name = name;
+  }
+  Person.prototype.hello = function () {
+    console.log(`こんにちは${this.name}`);
+  };
+  const taro = new Person("独習太郎");
+  taro.hello();
+  const hanako = new Person("独習花子");
+  hanako.hello();
+*/
+
+  //   function Test() {}
+  //   Test.prototype.hello = function () {
+  //     console.log("hello");
+  //   };
+  //   const instance = new Test;
+  //   console.log(instance.__proto__ === Test.prototype);
+  //   instance.__proto__.hello();
+  /*
+  class Test {
+    hello() {
+      console.log("hello");
+    }
+  }
+  const instance1 = new Test();
+  const instance2 = new Test();
+  Test.prototype.hello();
+  instance1.__proto__.hello();
+  instance1.hello();
+  Test.prototype.hello = function () {
+    console.log("bye");
+  };
+  instance1.hello();
+  instance2.hello();
+  */
+  const obj = {
+    __proto__: {
+      __proto__: {
+        hello() {
+          console.log("こんにちは");
+        },
+      },
+    },
+  };
+  obj.hello();
 </script>
