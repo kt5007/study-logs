@@ -1,151 +1,151 @@
 <script>
   /*
-  class User {
-    constructor(username, password, roll) {
-      this.username = username;
-      this.password = password;
-      this.roll = roll;
+    class User {
+      constructor(username, password, roll) {
+        this.username = username;
+        this.password = password;
+        this.roll = roll;
+      }
+      login() {
+        this.check();
+        console.log(`ログイン[${this.username} / ${this.password}]`);
+      }
+      check() {
+        console.log(`ログイン情報をチェックします。`);
+      }
+      checkRoll() {
+        const display =
+          this.roll === "admin" ? "管理者権限です" : "一般ユーザーです";
+        console.log(display);
+      }
     }
-    login() {
-      this.check();
-      console.log(`ログイン[${this.username} / ${this.password}]`);
-    }
-    check() {
-      console.log(`ログイン情報をチェックします。`);
-    }
-    checkRoll() {
-      const display =
-        this.roll === "admin" ? "管理者権限です" : "一般ユーザーです";
-      console.log(display);
-    }
-  }
-  const taro = new User("独習 太郎", "taro-pwd", "test");
-  taro.login();
-  taro.checkRoll();
-  */
+    const taro = new User("独習 太郎", "taro-pwd", "test");
+    taro.login();
+    taro.checkRoll();
+    */
 
   //   9.2
   /*
-  class StdClass {
-    constructor(arg) {
-      this.arg = arg;
-    }
-    static printFn = console.log;
-    static print(arg) {
-      StdClass.printFn(arg);
-    }
+    class StdClass {
+      constructor(arg) {
+        this.arg = arg;
+      }
+      static printFn = console.log;
+      static print(arg) {
+        StdClass.printFn(arg);
+      }
 
-    print() {
-      this.constructor.print(this.arg);
+      print() {
+        this.constructor.print(this.arg);
+      }
     }
-  }
-  const std = new StdClass("こんにちは");
-  std.print();
-*/
+    const std = new StdClass("こんにちは");
+    std.print();
+  */
 
   /*
-class Person {
-  constructor(firstname, lastname) {
-    this.firstname = firstname;
-    this.lastname = lastname;
+  class Person {
+    constructor(firstname, lastname) {
+      this.firstname = firstname;
+      this.lastname = lastname;
+    }
+    get fullname() {
+      return this.lastname + this.firstname;
+    }
+    set age(value) {
+      this._age = Number(value);
+    }
+    get age() {
+      return this._age;
+    }
+    set gender(gender){
+        const arr = ["男", "女", "トランスジェンダー"];
+        try {
+            if(arr.indexOf(gender) !== -1){
+                this._gender = gender;
+            } else{
+                throw 'gender プロパティには " 男 "、" 女 "、または " トランスジェンダー " を設定してください。';
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    }
+    get gender(){
+        return this._gender;
+    }
   }
-  get fullname() {
-    return this.lastname + this.firstname;
-  }
-  set age(value) {
-    this._age = Number(value);
-  }
-  get age() {
-    return this._age;
-  }
-  set gender(gender){
-      const arr = ["男", "女", "トランスジェンダー"];
-      try {
-          if(arr.indexOf(gender) !== -1){
-              this._gender = gender;
-          } else{
-              throw 'gender プロパティには " 男 "、" 女 "、または " トランスジェンダー " を設定してください。';
-          }
-      } catch (e) {
-          console.error(e);
+  const taro = new Person("太郎", "独習");
+  taro.gender = "トランス";
+  //   console.log(typeof taro.gender);
+  //   console.log(taro);
+  */
+
+  /*
+  9.4
+  class Parent {
+      constructor (name){
+          this.familyName = name;
+      }
+      introduction(){
+          console.log(`名字は${this.familyName}です。`);
       }
   }
-  get gender(){
-      return this._gender;
+
+  class Child extends Parent{
   }
-}
-const taro = new Person("太郎", "独習");
-taro.gender = "トランス";
-//   console.log(typeof taro.gender);
-//   console.log(taro);
-*/
 
-  /*
-9.4
-class Parent {
-    constructor (name){
-        this.familyName = name;
-    }
-    introduction(){
-        console.log(`名字は${this.familyName}です。`);
-    }
-}
-
-class Child extends Parent{
-}
-
-const taro = new Child("独習");
-taro.introduction();
-*/
+  const taro = new Child("独習");
+  taro.introduction();
+  */
 
   // 9.5
   /*
-1.true
-2.false
-3.true
-4.true
-*/
+  1.true
+  2.false
+  3.true
+  4.true
+  */
 
   // 9.6
   /*
-  class Person {
-    #lastname = "独習";
-    #firstname;
-    #age;
-    constructor(firstname) {
-      this.#firstname = firstname;
-    }
+    class Person {
+      #lastname = "独習";
+      #firstname;
+      #age;
+      constructor(firstname) {
+        this.#firstname = firstname;
+      }
 
-    get fullname() {
-      return this.#lastname + this.#firstname;
-    }
+      get fullname() {
+        return this.#lastname + this.#firstname;
+      }
 
-    set age(value) {
-      this.#age = Number(value);
+      set age(value) {
+        this.#age = Number(value);
+      }
+      get age() {
+        return this.#age;
+      }
     }
-    get age() {
-      return this.#age;
-    }
-  }
-  const taro = new Person("太郎");
-  taro.age = 18;
-  console.log(taro.age);
-  console.log(taro.fullname);
-  */
+    const taro = new Person("太郎");
+    taro.age = 18;
+    console.log(taro.age);
+    console.log(taro.fullname);
+    */
 
   //   2
   /*
-  function Person(name) {
-    this.name = name;
-  }
-  Person.prototype.hello = function () {
-    console.log(`こんにちは${this.name}`);
-  };
-  const taro = new Person("独習太郎");
-  taro.hello();
-  const hanako = new Person("独習花子");
-  hanako.hello();
-*/
+    function Person(name) {
+      this.name = name;
+    }
+    Person.prototype.hello = function () {
+      console.log(`こんにちは${this.name}`);
+    };
+    const taro = new Person("独習太郎");
+    taro.hello();
+    const hanako = new Person("独習花子");
+    hanako.hello();
+  */
 
   //   function Test() {}
   //   Test.prototype.hello = function () {
@@ -155,30 +155,93 @@ taro.introduction();
   //   console.log(instance.__proto__ === Test.prototype);
   //   instance.__proto__.hello();
   /*
-  class Test {
-    hello() {
-      console.log("hello");
+    class Test {
+      hello() {
+        console.log("hello");
+      }
+    }
+    const instance1 = new Test();
+    const instance2 = new Test();
+    Test.prototype.hello();
+    instance1.__proto__.hello();
+    instance1.hello();
+    Test.prototype.hello = function () {
+      console.log("bye");
+    };
+    instance1.hello();
+    instance2.hello();
+    */
+  //   const obj = {
+  //     __proto__: {
+  //       hello() {
+  //         console.log("hello");
+  //       },
+  //       __proto__: {
+  //         hello() {
+  //           console.log("こんにちは");
+  //         },
+  //       },
+  //     },
+  //   };
+  //   obj.hello();
+
+  //   const fruit1 = {
+  //       apple: function () {
+  //           console.log("apple");
+  //       },
+  //   };
+  //   const fruit2 = Object.create(fruit1);
+  //   fruit2.banana = function () {
+  //       console.log('banana');
+  //   }
+  //   const fruit3 = Object.create(fruit2);
+  //   fruit3.melon = function () {
+  //       console.log('mellon');
+  //   }
+  //   fruit3.apple();
+  //   console.log(fruit3);
+
+  //   function Parent() {}
+  //   function Child() {}
+  //   Parent.prototype.parentMethod = function () {
+  //       console.log('parent method');
+  //   }
+  //   Child.prototype = Object.create(Parent.prototype);
+  //   Child.prototype.childMethod = function () {
+  //       console.log('child method');
+  //   }
+  //   const childObj = new Child;
+  //   childObj.parentMethod();
+  //   childObj.childMethod();
+  //   console.log(Child.prototype);
+
+  // 章末問題
+  // [1]
+  class User {
+    constructor(username) {
+      this.username = username;
+      this.deleted = 0;
+    }
+    login() {
+      const message = this.deleted === 0 ? "成功" : "失敗";
+      console.log(message);
     }
   }
-  const instance1 = new Test();
-  const instance2 = new Test();
-  Test.prototype.hello();
-  instance1.__proto__.hello();
-  instance1.hello();
-  Test.prototype.hello = function () {
-    console.log("bye");
-  };
-  instance1.hello();
-  instance2.hello();
-  */
-  const obj = {
-    __proto__: {
-      __proto__: {
-        hello() {
-          console.log("こんにちは");
-        },
-      },
-    },
-  };
-  obj.hello();
+  class AdminUser extends User {
+    constructor(deleted,username) {
+      super(deleted,username);
+    }
+
+    deleteUser(user) {
+      if (user instanceof User) {
+        user.deleted = 1;
+        console.log(`Deleted ${user.username}`);
+      } else {
+        throw new Error("User オブジェクトを引数にする必要があります。");
+      }
+    }
+  }
+  const user = new User("kento");
+  const admin = new AdminUser();
+  admin.deleteUser(user);
 </script>
