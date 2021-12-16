@@ -36,5 +36,14 @@
   //   console.log(firstDay);
   //   firstDay.setMonth(firstDay.getMonth() + 20);
   //   console.log(firstDay);
-  \d{3}
+  // 10.4
+  const a1 = /^\d{3}-\d{4}$/.test("0101-0012a");
+  const a2 = /\d{3}-\d{4}/.test("2.2-3042");
+  console.log(a1);
+  console.log(a2);
+
+//   const b1 = /^[\w\.\-]+@[\w\.\-]+$/.test('example0.00@ex');
+//   const b1 = /^[\w\.\-]+@[\w\-]+\.[\w\.\-]+$/.test('example0.00@ex..');
+  const b1 = /^[\w\.\-]+@[\w\-]+\.[\w\.\-]+$/.test('example0.00@ex..');
+  console.log(b1);
 </script>
