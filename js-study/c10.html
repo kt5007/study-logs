@@ -1,3 +1,20 @@
+<!--  bodyタグに高さ2000px、背景色に黒から白を設定する
+<body style="height: 2000px; background-image: linear-gradient(#000, #fff)">
+  <script>
+    /* ここに記述 */
+    console.log(window.scrollY);
+    const Id = setInterval(() => {
+      if (window.scrollY > 1000) {
+        if (window.confirm("画面を閉じますか？")) {
+          window.close();
+        } else {
+          clearInterval(Id);
+        }
+      }
+    }, 1000);
+  </script>
+</body>
+-->
 <script>
   /*
       let counter = 0;
@@ -89,5 +106,27 @@
   //   string型なのでラッパーオブジェクトにより使用できる
   //   章末
   //   [1]
-  
+
+  //   [2]
+  // 1.協定標準時間 Coordinated Universal Time
+  // 2. gmt Greenwich Mean Time
+  // 3.japan standard Time
+  // 4.9
+  //   [3]
+  //   const dayUnit = 1000 * 60 * 60 * 24;
+  //   const End = new Date(2023, 5, 20);
+  //   const Begin = new Date(2023, 6, 12);
+  //   const diff = Math.abs(End - Begin) / dayUnit;
+  //   console.log(diff);
+  //   [4]
+</script>
+<script>
+  const html = `<h1>見出し1</h1>
+<h2>見出し2</h2> <h3>見出し3</h3> <header>ヘッダー </header>`;
+const it = html.matchAll(/<(h\d)>(.+)(<\/\1)>/g);
+for (const v of it){
+    console.log(v);
+    console.log(v[2]);
+}
+  /* 上記の変数htmlから見出しタグのテキストを抽出する処理を記述 */
 </script>
