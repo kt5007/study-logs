@@ -21,5 +21,42 @@
   //   console.log(chuka3);
   //   tf = chuka3.includes("八宝菜");
   //   console.log(tf);
-  
+  //   11.2
+  // { タイトル, 優先順位, 完了か否か }
+  // 優先順位(priority)は1:低、2:中、3:高
+  const todos = [
+    { title: "晩御飯", priority: 2, completed: false },
+    { title: "ゴミ出し", priority: 1, completed: true },
+    { title: "食材の買い出し", priority: 3, completed: false },
+    { title: "洗濯", priority: 2, completed: true },
+    { title: "録画の視聴", priority: 1, completed: false },
+  ];
+  function notCompletedTask(value, index) {
+    if (!value.completed) {
+      return value;
+    }
+  }
+  const notCompleted = todos.filter(notCompletedTask);
+
+  function compare(val1, val2) {
+    if (val1.priority < val2.priority) {
+      return -1;
+    }
+    if (val1.priority > val2.priority) {
+      return 1;
+    }
+    return 0;
+  }
+  notCompleted.sort(compare);
+  console.log(notCompleted);
+
+  function printTodo({ title: task, priority: num, completed: tf }) {
+    if (tf) {
+      console.log(`${task}は完了`);
+    } else {
+      console.log(`${task}はやらないと`);
+      return task;
+    }
+  }
+  notCompleted.map(printTodo);
 </script>
