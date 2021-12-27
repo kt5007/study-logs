@@ -81,4 +81,29 @@
   // console.log(menu.has("ゴマ団子"));
   // menu.delete("八宝菜");
   // console.log(menu);
+  // check questions
+  [1];
+  const orders = [
+    ["八宝菜", 1, 600],
+    ["餃子", 4, 200],
+    ["回鍋肉", 1, 500],
+    ["青椒肉絲", 2, 700],
+  ];
+  let result1 = orders.filter((value) => {
+    return value[0] !== "回鍋肉";
+  });
+  console.log(result1);
+  let result2 = orders.every((value, index, arry) => {
+    return value[2] < 1000;
+  });
+  console.log(result2);
+  let result3 = orders.sort((val1, val2) => {
+    return val2[2] - val1[2];
+  });
+  console.log(result3);
+  orders.forEach(([shohin, num, money]) => {
+    console.log(`${shohin}を${money}で${num}個注文しました。`);
+  });
+  let total_cost = orders.reduce((totalV, [,num,price]) => {return totalV+num*price},0);
+  console.log(total_cost);
 </script>
