@@ -25,7 +25,7 @@
   // { タイトル, 優先順位, 完了か否か }
   // 優先順位(priority)は1:低、2:中、3:高
   //   const todos = [
-  //     { title: "晩御飯", priority: 2, completed: false },
+  //     { A: "晩御飯", priority: 2, completed: false },
   //     { title: "ゴミ出し", priority: 1, completed: true },
   //     { title: "食材の買い出し", priority: 3, completed: false },
   //     { title: "洗濯", priority: 2, completed: true },
@@ -82,28 +82,82 @@
   // menu.delete("八宝菜");
   // console.log(menu);
   // check questions
-  [1];
-  const orders = [
-    ["八宝菜", 1, 600],
-    ["餃子", 4, 200],
-    ["回鍋肉", 1, 500],
-    ["青椒肉絲", 2, 700],
-  ];
-  let result1 = orders.filter((value) => {
-    return value[0] !== "回鍋肉";
+  // [1];
+  // const orders = [
+  //   ["八宝菜", 1, 600],
+  //   ["餃子", 4, 200],
+  //   ["回鍋肉", 1, 500],
+  //   ["青椒肉絲", 2, 700],
+  // ];
+  // let result1 = orders.filter((value) => {
+  //   return value[0] !== "回鍋肉";
+  // });
+  // console.log(result1);
+  // let result2 = orders.every((value, index, arry) => {
+  //   return value[2] < 1000;
+  // });
+  // console.log(result2);
+  // let result3 = orders.sort((val1, val2) => {
+  //   return val2[2] - val1[2];
+  // });
+  // console.log(result3);
+  // orders.forEach(([shohin, num, money]) => {
+  //   console.log(`${shohin}を${money}で${num}個注文しました。`);
+  // });
+  // let total_cost = orders.reduce((totalV, [,num,price]) => {return totalV+num*price},0);
+  // console.log(total_cost);
+  // [2]
+  // Personクラス
+  class Person {
+    constructor(fullname, age, gender) {
+      this.fullname = fullname;
+      this.age = age;
+      this.gender = gender;
+    }
+  }
+  // 登場人物
+  const taro = new Person("太郎", 18, "男");
+  const jiro = new Person("次郎", 15, "男");
+  const saburo = new Person("三郎", 10, "男");
+  const hanako = new Person("花子", 23, "女");
+  const hanayo = new Person("花代", 18, "女");
+
+  // 友達(friends)オブジェクト
+  const friends = new Map();
+  friends.set(taro, new Set([jiro, hanayo]));
+  friends.set(hanako, new Set([hanayo, taro, saburo]));
+  console.log(friends);
+
+  const taroFriends = friends.get(taro);
+  taroFriends.add(hanako);
+  console.log(taroFriends);
+
+  const taroFriendsArray = Array.from(taroFriends);
+  console.log(taroFriendsArray);
+  taroFriendsArray.sort((age1, age2) => age2.age - age1.age);
+  for (const person of taroFriendsArray) {
+    console.log(person.fullname);
+  }
+
+  const taroGirlFriends = taroFriendsArray.filter(
+    (value) => value.gender !== taro.gender
+  );
+  console.log(taroGirlFriends.length);
+
+  const friendsArray = Array.from(friends);
+
+  friends.forEach((value,index) => {
+    let friendsStr = "";
+    value.forEach((valueSet) => {
+      console.log(valueSet);
+      friendsStr += valueSet.fullname;
+    });
+    console.log(index);
+    console.log(`私の名前は${index.fullname}です。友達には${friendsStr}がいます}`);
   });
-  console.log(result1);
-  let result2 = orders.every((value, index, arry) => {
-    return value[2] < 1000;
-  });
-  console.log(result2);
-  let result3 = orders.sort((val1, val2) => {
-    return val2[2] - val1[2];
-  });
-  console.log(result3);
-  orders.forEach(([shohin, num, money]) => {
-    console.log(`${shohin}を${money}で${num}個注文しました。`);
-  });
-  let total_cost = orders.reduce((totalV, [,num,price]) => {return totalV+num*price},0);
-  console.log(total_cost);
+  // [3]
+  // 1.オブジェクト
+  // 2.反復処理
+  // 3.メモリリーク
+  // 4.弱参照
 </script>
