@@ -1,0 +1,26 @@
+<script>
+  function rangeIterator(min, max) {
+    if (min > max) {
+      let temp = min;
+      min = max;
+      max = temp;
+    }
+    
+
+    let value = 0;
+    return {
+      next() {
+        if (value < max) {
+          return {
+            done: false,
+            value: value++,
+          };
+        } else {
+          return {
+            done: true,
+          };
+        }
+      },
+    };
+  }
+</script>
