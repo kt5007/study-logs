@@ -1,16 +1,13 @@
 <script>
+  /*
+  12.1
+  数値 min ~ max まで 1 ずつインクリメントして値を返すイテレータを関数(rangeIterator)として 実装
+  */
   function rangeIterator(min, max) {
-    if (min > max) {
-      let temp = min;
-      min = max;
-      max = temp;
-    }
-    
-
-    let value = 0;
+    let value = min;
     return {
       next() {
-        if (value < max) {
+        if (value <= max) {
           return {
             done: false,
             value: value++,
@@ -23,4 +20,14 @@
       },
     };
   }
+  // 結果
+  const iterator = rangeIterator(2, 4);
+  console.log(iterator.next());
+  console.log(iterator.next());
+  console.log(iterator.next());
+  console.log(iterator.next());
+
+  /*
+  
+  */
 </script>
