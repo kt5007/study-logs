@@ -70,4 +70,28 @@ C,B,A
     },'更に1秒経過',1000);
   },'1秒経過',1000);
   </script>
-</13.2>
+</13.3>
+<script>
+  let instance = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let DateTime = new Date();
+      let Seconds = DateTime.getSeconds();
+      if (Seconds % 2 === 0) {
+        resolve(Seconds);
+      } else {
+        reject(Seconds);
+      }
+    }, 1000);
+  })
+    .then((value) => {
+      console.log(`${value}は偶数のため、成功とします。`);
+    })
+    .catch((value) => {
+      console.log(`${value}は奇数のため、エラーとします。`);
+    })
+    .finally((value) => {
+      console.log(`処理を終了します。`);
+    });
+
+  console.log();
+</script>

@@ -1,24 +1,38 @@
 <script>
-  let instance = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      let DateTime = new Date();
-      let Seconds = DateTime.getSeconds();
-      if (Seconds % 2 === 0) {
-        resolve(Seconds);
-      } else {
-        reject(Seconds);
-      }
-    }, 1000);
-  })
-    .then((value) => {
-      console.log(`${value}は偶数のため、成功とします。`);
-    })
-    .catch((value) => {
-      console.log(`${value}は奇数のため、エラーとします。`);
-    })
-    .finally((value) => {
-      console.log(`処理を終了します。`);
+  //13.4
+  function promiseFactory(count) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (count <= 6) {
+          console.log(count);
+          count += 2;
+          resolve(count);
+        } else {
+          reject(count);
+        }
+      }, 1000);
     });
-
-  console.log();
+  }
+  promiseFactory(0)
+    .then((count) => {
+      return promiseFactory(count);
+    })
+    .then((count) => {
+      return promiseFactory(count);
+    })
+    .then((count) => {
+      return promiseFactory(count);
+    })
+    .then((count) => {
+      return promiseFactory(count);
+    })
+    .then((count) => {
+      return promiseFactory(count);
+    })
+    .catch((errorCount) => {
+      console.log(`エラーになったのは${errorCount}です。`);
+    })
+    .finally(() => {
+      console.log("終了");
+    });
 </script>
