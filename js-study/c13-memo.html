@@ -1,0 +1,73 @@
+<html>
+  <body>
+    <button>ボタン</button>
+    <script>
+      function sleep(ms) {
+        const startTime = new Date();
+        // whileループでmsミリ秒分ループを継続
+        // msミリ秒経つまでは条件がtrueにならない;
+        // whileループが完了した直後にダイアログを表示
+        while (new Date() - startTime < ms);
+        alert("sleep関数が完了しました。");
+      }
+      sleep(3000); // sleep関数を実行
+      // ボタンにクリック時の処理を実装
+      const btn = document.querySelector("button");
+      function clickHandler() {
+        alert("ボタンがクリックされました。");
+      }
+      btn.addEventListener("click", clickHandler);
+    </script>
+  </body>
+</html>
+
+<html>
+  <body>
+    <button>ボタン</button>
+    <script>
+      function sleep(ms) {
+        setTimeout(function(){
+          alert('sleep関数が完了しました');
+        },ms);
+      }
+      sleep(3000); // sleep関数を実行
+      // ボタンにクリック時の処理を実装
+      const btn = document.querySelector("button");
+      function clickHandler() {
+        alert("ボタンがクリックされました。");
+      }
+      btn.addEventListener("click", clickHandler);
+      let val = 0;
+      setTimeout(()=>{val=1;},1000);
+      console.log(val);
+    </script>
+  </body>
+</html>
+
+<13.1>
+C,B,A
+
+<13.2>
+  <script>
+      function delay(fn, message, ms) {
+    setTimeout(function() {
+      fn(message);
+    },ms);
+  }
+  // function display1(message){
+  //   console.log(message);
+  // }
+  // function display2(message){
+  //   alert(message);
+  // }
+  // delay(display1 ,'こんにちは',1000);
+  // delay(display2 ,'さよなら',2000);
+
+  delay(function(message1){
+    console.log(message1);
+    delay(function(message2){
+      console.log(message2);
+    },'更に1秒経過',1000);
+  },'1秒経過',1000);
+  </script>
+</13.2>
