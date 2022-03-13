@@ -95,3 +95,42 @@ C,B,A
 
   console.log();
 </script>
+
+<script>
+  //13.4
+  function promiseFactory(count) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (count <= 6) {
+          console.log(count);
+          count += 2;
+          resolve(count);
+        } else {
+          reject(count);
+        }
+      }, 1000);
+    });
+  }
+  promiseFactory(0)
+    .then((count) => {
+      return promiseFactory(count);
+    })
+    .then((count) => {
+      return promiseFactory(count);
+    })
+    .then((count) => {
+      return promiseFactory(count);
+    })
+    .then((count) => {
+      return promiseFactory(count);
+    })
+    .then((count) => {
+      return promiseFactory(count);
+    })
+    .catch((errorCount) => {
+      console.log(`エラーになったのは${errorCount}です。`);
+    })
+    .finally(() => {
+      console.log("終了");
+    });
+</script>
