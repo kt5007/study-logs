@@ -2,10 +2,9 @@
   <button>ボタン</button>
   <script>
     function sleep(ms) {
-      const startTime = new Date();
-
-      while (new Date() - startTime < ms);
-      alert("sleep関数が完了");
+      setTimeout(function () {
+        alert("sleep関数が完了しました。");
+      }, ms);
     }
     sleep(3000);
     const btn = document.querySelector("button");
